@@ -43,18 +43,18 @@ function App() {
   // to Create a New User
   const createNewUser = data => {
     const URL = `${baseURL}/users/`
+    // data.id = Math.ceil(Math.random() * 999999)  // generate an id
     axios.post(URL, data)
       .then(res => {
         console.log(res.data)
         getAllUsers()
       })
-      .catch(err => {
-      })
+      .catch(err => { console.log(err) })
   }
 
   // to Delete a User with a specific id number
   const deleteUserById = id => {
-    const URL = `${baseURL}/users/${id}/`
+    const URL = `${baseURL}/users/${id}`
     axios.delete(URL)
       .then(res => {
         console.log(res.data)
@@ -67,7 +67,7 @@ function App() {
   // to Update a specific User's information
   const updateUserById = (id, data) => {
     const URL = `${baseURL}/users/${id}/`
-    axios.patch(URL, data)
+    axios.put(URL, data)
       .then(res => {
         console.log(res.data)
         getAllUsers()
@@ -113,7 +113,7 @@ function App() {
         {
           users?.map(user => (
             <UserCard
-              key={user.id}
+              key={user._id}
               user={user}
               deleteUserById={deleteUserById}
               setUpdateInfo={setUpdateInfo}
