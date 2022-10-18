@@ -30,7 +30,7 @@ const UserCard = ({ user, deleteUserById, setUpdateInfo, setFormClosed }) => {
         </li>
       </ul>
       <footer className="user__footer">
-        <button className="user__btn" onClick={() => deleteUserById(user._id)}>
+        <button className="user__btn" onClick={() => deleteUserById(user.id)}>
           <i className="fa-regular fa-trash-can"></i>
         </button>
         <button className="user__btn" onClick={handleEdit}>

@@ -22,7 +22,7 @@ const FormUsers = ({ createNewUser, updateInfo, updateUserById, setUpdateInfo, s
 
   const submit = data => {
     if (updateInfo) {
-      updateUserById(updateInfo._id, data)
+      updateUserById(updateInfo.id, data)
       setUpdateInfo()
     } else {
       createNewUser(data)

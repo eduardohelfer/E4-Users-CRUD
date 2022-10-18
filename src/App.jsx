@@ -5,9 +5,8 @@ import './App.css'
 import FormUsers from './components/FormUsers'
 import UserCard from './components/UserCard'
 
-const baseURL = 'https://crudcrud.com/api/6352a88bd948463c92627eef84090280'
-
-// const baseURL = 'http://144.126.218.162:9000'
+// const baseURL = 'https://crudcrud.com/api/6352a88bd948463c92627eef84090280'
+const baseURL = 'http://144.126.218.162:9000'
 // const baseURL = 'https://users-crud1.herokuapp.com'
 
 function App() {
@@ -54,7 +53,7 @@ function App() {
 
   // to Delete a User with a specific id number
   const deleteUserById = id => {
-    const URL = `${baseURL}/users/${id}`
+    const URL = `${baseURL}/users/${id}/`
     axios.delete(URL)
       .then(res => {
         console.log(res.data)
@@ -66,8 +65,8 @@ function App() {
 
   // to Update a specific User's information
   const updateUserById = (id, data) => {
-    const URL = `${baseURL}/users/${id}`
-    axios.put(URL, data)
+    const URL = `${baseURL}/users/${id}/`
+    axios.patch(URL, data)
       .then(res => {
         console.log(res.data)
         getAllUsers()
@@ -113,7 +112,7 @@ function App() {
         {
           users?.map(user => (
             <UserCard
-              key={user._id}
+              key={user.id}
               user={user}
               deleteUserById={deleteUserById}
               setUpdateInfo={setUpdateInfo}

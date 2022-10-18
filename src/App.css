@@ -88,6 +88,26 @@
   position: relative;
   width: 100%;
   max-width: 300px;
+  text-align: center;
+}
+
+.deleteSucess__ok {
+  width: 100%;
+  max-width: 200px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #D85D5D;
+  color: white;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.deleteSucess__ok:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #0005;
+  background-color: #de6d6d;
+  transition: transform 150ms ease, boxhshadow 150ms ease;
 }
 
 .hideSuccess {
