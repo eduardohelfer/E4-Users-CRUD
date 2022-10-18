@@ -25,6 +25,7 @@ const FormUsers = ({ createNewUser, updateInfo, updateUserById, setUpdateInfo, s
       updateUserById(updateInfo.id, data)
       setUpdateInfo()
     } else {
+      data.id = Math.ceil(Math.random() * 999999)  // generate an id
       createNewUser(data)
     }
     reset(defaultValues)
