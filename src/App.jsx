@@ -66,7 +66,7 @@ function App() {
 
   // to Update a specific User's information
   const updateUserById = (id, data) => {
-    const URL = `${baseURL}/users/${id}/`
+    const URL = `${baseURL}/users/${id}`
     axios.put(URL, data)
       .then(res => {
         console.log(res.data)
